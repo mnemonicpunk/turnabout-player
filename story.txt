@@ -1,9 +1,14 @@
 LOG Beginning execution of test script
 BGM trial
+BG prosecutor
+ANIMATION edgeworth_talk
+SAY So in summary...
+SAY The prosecution is not sticking to the rule of Phoenix Wright games.
 BG defense
 ANIMATION phoenix_talk
-SAY So to summarize the case so far...
-SAY All the evidence points to my client as usual.
-SAY But what you didn't expect...
+SAY You sound very confident, Mr. Edgeworth.
+SAY But that's just the thing...
 BGM objection
-SAY ...is that I always pull a solution out of my ass!
+SAY This is NOT a Phoenix Wright game.
+SAY Instead this is just an engine that allows you
+SAY to write your very own Phoenix Wright cases.
