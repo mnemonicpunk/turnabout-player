@@ -1,0 +1,9 @@
+LOG Beginning execution of test script
+BGM trial
+BG defense
+ANIMATION phoenix_talk
+SAY So to summarize the case so far...
+SAY All the evidence points to my client as usual.
+SAY But what you didn't expect...
+BGM objection
+SAY ...is that I always pull a solution out of my ass!
