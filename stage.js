@@ -50,6 +50,18 @@ export class Stage {
                     this.animation_timer = 0;
                     this.line_finished = true;
                     break;
+                case "act":
+                    console.log("[ACT] " + this.line.animation);
+                    if (this.line.animation != "none") {
+                        if (this.animation !== ANIMATIONS[this.line.animation]) {
+                            this.animation = ANIMATIONS[this.line.animation];
+                            this.animation_frame = 0;
+                            this.animation_timer = 0;        
+                        }
+                    } else {
+                        this.animation = [];
+                    }                    
+                    break;                    
                 case "say":
                     if (!this.message_box.active) {
                         this.message_box = {
@@ -69,7 +81,17 @@ export class Stage {
                 case "bgm":
                     this.playBGM(this.line.bgm);
                     this.line_finished = true;
+                    break;
+                case "sfx":
+                    this.playSFX("sfx-" + this.line.sfx + ".wav");
+                    this.line_finished = true;
                     break;                    
+                case "flash":
+                    this.line.progress++;
+                    if (this.line.progress >= 30) {
+                        this.line_finished = true;
+                    }
+                    break;
                 case "EOF":
                     this.line_finished = true;
                     break;
@@ -82,7 +104,12 @@ export class Stage {
 
             if (this.animation != null) {
                 if (this.animation_frame >= this.animation.length) {
-                    this.animation_frame = 0;
+                    if (this.line.type == "act") {
+                        this.animation_frame = this.animation.length;
+                        this.line_finished = true;
+                    } else {
+                        this.animation_frame = 0;
+                    }
                 }    
             } else {
                 this.animation_frame = 0;
@@ -143,13 +170,27 @@ export class Stage {
         }
 
         if (this.message_box.active) {
+            ctx.save();
             ctx.globalAlpha = 0.5;
             ctx.drawImage(sprites["ui.png"], 505, 1899, 241, 47, 5, 140, 241, 47);
-            ctx.globalAlpha = 1;
+            ctx.restore();
 
             let text = this.message_box.text.substr(0, this.message_box.current);
             this.drawTextBox(ctx, sprites, text, 8, 148);
             //this.drawText(ctx, sprites, text, 8, 148);
+        }
+
+        // if we are currently flashing the screen, show that!
+        if ((this.line) && (this.line.type == "flash")) {
+            let amount = (1- this.line.progress/15);
+            if (amount < 0) {
+                amount = 0;
+            }
+            ctx.save();
+            ctx.globalAlpha = amount;
+            ctx.fillStyle = "#fff";
+            ctx.fillRect(0, 0, 256, 192);
+            ctx.restore();
         }
     }
     drawLower(ctx, sprites) {

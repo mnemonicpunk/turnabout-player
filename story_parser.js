@@ -49,12 +49,30 @@ export class StoryParser {
                         animation: lines[l].substr(10)
                     });
                     break;
+                case "ACT":
+                    parsed.push({
+                        type: "act",
+                        animation: lines[l].substr(4)
+                    });
+                    break;                    
                 case "BGM":
                     parsed.push({
                         type: "bgm",
                         bgm: lines[l].substr(4)
                     });
-                    break;                                                       
+                    break;
+                case "SFX":
+                    parsed.push({
+                        type: "sfx",
+                        sfx: lines[l].substr(4)
+                    });
+                    break;                      
+                case "FLASH":
+                    parsed.push({
+                        type: "flash",
+                        progress: 0
+                    });
+                    break;                                                                          
             }
         }
 

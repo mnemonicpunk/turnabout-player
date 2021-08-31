@@ -9,6 +9,16 @@ ANIMATION phoenix_talk
 SAY You sound very confident, Mr. Edgeworth.
 SAY But that's just the thing...
 BGM objection
+BG speedline
+ANIMATION phoenix_closeup
+SFX realization
+FLASH
 SAY This is NOT a Phoenix Wright game.
-SAY Instead this is just an engine that allows you
-SAY to write your very own Phoenix Wright cases.
+SAY Instead this is just an engine that allows you to write
+SAY your very own Phoenix Wright cases.
+BG prosecutor
+SFX stab2
+ACT edgeworth_shock
+ANIMATION edgeworth_shock_talk
+SAY THAT IS IMPOSSIBLE!! HOW COULD YOU...??
+SAY Nobody can just write a Phoenix Wright game just like that!
