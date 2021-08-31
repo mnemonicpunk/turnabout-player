@@ -80,7 +80,11 @@ export class Stage {
             this.animation_frame++;
             this.animation_timer = 0;
 
-            if (this.animation_frame >= this.animation.length) {
+            if (this.animation != null) {
+                if (this.animation_frame >= this.animation.length) {
+                    this.animation_frame = 0;
+                }    
+            } else {
                 this.animation_frame = 0;
             }
         }
