@@ -12,7 +12,13 @@ export class StoryParser {
     }
     parseStory(story_text) {
         this.text = story_text;
-        let lines = this.text.split('\r\n');
+
+        let sep = "\n";
+        if (this.text.includes("\r\n")) {
+            sep = "\r\n";
+        }
+
+        let lines = this.text.split(sep);
 
         let parsed = [];
         for (let l in lines) {
