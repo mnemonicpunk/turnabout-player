@@ -1,24 +1,59 @@
 LOG Beginning execution of test script
 BGM trial
+BG judge
+ANIMATION judge_talk
+SAY Court is now in session for the case of...
+SAY ...
+ANIMATION judge_confused
+SFX whoops
+FLASH
+SAY What was the case again?
 BG prosecutor
 ANIMATION edgeworth_talk
 SAY So in summary...
-SAY The prosecution is not sticking to the rule of Phoenix Wright games.
+SFX shooop
+ANIMATION edgeworth_paper
+SAY The defendant claims that it is really easy to make
+SAY your own Visual Novel games.
+ANIMATION edgeworth_talk
+SAY Since that is obviously fraud we can close this case quickly.
+SAY Prosecution is ready your honor.
 BG defense
 ANIMATION phoenix_talk
-SAY You sound very confident, Mr. Edgeworth.
-SAY But that's just the thing...
-BGM objection
-BG speedline
-ANIMATION phoenix_closeup
-SFX realization
-FLASH
-SAY This is NOT a Phoenix Wright game.
-SAY Instead this is just an engine that allows you to write
-SAY your very own Phoenix Wright cases.
+SAY The defense is ready as well.
+SAY Sadly casefiles are not yet implemented so I am kinda
+SAY flying in the dark.
 BG prosecutor
-SFX stab2
-ACT edgeworth_shock
-ANIMATION edgeworth_shock_talk
-SAY THAT IS IMPOSSIBLE!! HOW COULD YOU...??
-SAY Nobody can just write a Phoenix Wright game just like that!
+ANIMATION edgeworth_talk
+SAY Not exactly unusual for you.
+BG defense
+ANIMATION phoenix_sweat_talk
+SFX damage1
+SAY This time it is not my fault.
+ANIMATION phoenix_talk
+SAY Bet they will be here soon enough.
+>test
+BG judge
+ANIMATION judge_talk
+SAY Very well. Opening statements?
+BG defense
+ANIMATION phoenix_talk
+SAY Opening statements?
+BG prosecutor
+ANIMATION edgeworth_talk
+SAY Opening statements.
+BG defense
+SFX damage1
+ANIMATION phoenix_sweat_talk
+SAY Opening statements?!?
+BG prosecutor
+SFX shooop
+ANIMATION edgeworth_paper
+SAY Opening statements.
+BG defense
+ANIMATION phoenix_talk
+SAY We are just gonna keep doing this forever, aren't we?
+BG prosecutor
+ANIMATION edgeworth_talk
+SAY It would appear so.
+JUMP >test

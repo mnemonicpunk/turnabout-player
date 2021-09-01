@@ -92,6 +92,9 @@ export class Stage {
                         this.line_finished = true;
                     }
                     break;
+                case "label":
+                    this.line_finished = true;
+                    break;                    
                 case "EOF":
                     this.line_finished = true;
                     break;

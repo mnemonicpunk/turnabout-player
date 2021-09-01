@@ -57,6 +57,35 @@ export const ANIMATIONS = {
             dest_y: 20
         },  
     ],
+    'phoenix_sweat_talk': [
+        {
+            sheet: 'phoenix.png',
+            x: 30,
+            y: 760,
+            w: 160,
+            h: 141,
+            dest_x: -2,
+            dest_y: 20
+        },
+        {
+            sheet: 'phoenix.png',
+            x: 220,
+            y: 760,
+            w: 160,
+            h: 141,
+            dest_x: -2,
+            dest_y: 20
+        },
+        {
+            sheet: 'phoenix.png',
+            x: 420,
+            y: 760,
+            w: 160,
+            h: 141,
+            dest_x: -2,
+            dest_y: 20
+        },
+    ],
     'edgeworth_talk': [
         {
             sheet: 'edgeworth.png',
@@ -95,7 +124,7 @@ export const ANIMATIONS = {
             dest_y: 20
         },
     ],
-    'edgeworth_shock': [
+    'edgeworth_dmg': [
         {
             sheet: 'edgeworth.png',
             x: 39,
@@ -142,7 +171,7 @@ export const ANIMATIONS = {
             dest_y: 20
         },                    
     ],
-    'edgeworth_shock_talk': [
+    'edgeworth_dmg_talk': [
         {
             sheet: 'edgeworth.png',
             x: 565,
@@ -179,6 +208,111 @@ export const ANIMATIONS = {
             dest_x: 100,
             dest_y: 52
         },               
+    ],
+    'edgeworth_paper': [
+        {
+            sheet: 'edgeworth.png',
+            x: 720,
+            y: 250,
+            w: 153,
+            h: 141,
+            dest_x: 93,
+            dest_y: 21
+        },
+        {
+            sheet: 'edgeworth.png',
+            x: 890,
+            y: 250,
+            w: 153,
+            h: 141,
+            dest_x: 93,
+            dest_y: 21
+        },
+        {
+            sheet: 'edgeworth.png',
+            x: 1065,
+            y: 250,
+            w: 153,
+            h: 141,
+            dest_x: 93,
+            dest_y: 21
+        },              
+    ],
+    'judge_talk': [
+        {
+            sheet: 'judge.png',
+            x: 14,
+            y: 5,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },
+        {
+            sheet: 'judge.png',
+            x: 155,
+            y: 5,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },
+        {
+            sheet: 'judge.png',
+            x: 293,
+            y: 5,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },
+        {
+            sheet: 'judge.png',
+            x: 431,
+            y: 5,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },
+    ],
+    'judge_confused': [
+        {
+            sheet: 'judge.png',
+            x: 17,
+            y: 142,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },
+        {
+            sheet: 'judge.png',
+            x: 152,
+            y: 142,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },
+        {
+            sheet: 'judge.png',
+            x: 290,
+            y: 142,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },/*
+        {
+            sheet: 'judge.png',
+            x: 431,
+            y: 5,
+            w: 140,
+            h: 108,
+            dest_x: 60,
+            dest_y: 24
+        },*/
     ]
 }
 
@@ -205,5 +339,8 @@ export const BACKGROUNDS = {
     },
     'speedline': {
         background: "bgspeedline.png",
+    },
+    'judge': {
+        background: "judgestand.png",
     },
 }

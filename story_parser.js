@@ -2,6 +2,7 @@ export class StoryParser {
     constructor() {
         this.text = "";
         this.lines = [];
+        this.labels = [];
         this.current_line = 0;
         this.loaded = false;
 
@@ -19,7 +20,7 @@ export class StoryParser {
         }
 
         let lines = this.text.split(sep);
-
+        let labels = [];
         let parsed = [];
         for (let l in lines) {
             let parts = lines[l].split(' ');
@@ -72,11 +73,37 @@ export class StoryParser {
                         type: "flash",
                         progress: 0
                     });
-                    break;                                                                          
+                    break;
+                case "JUMP":
+                    parsed.push({
+                        type: "jump",
+                        label: parts[1]
+                    });
+                    break;                                                                                            
+            }
+            if (parts[0][0] == ">") {
+                console.log("Registering label '" + parts[0] + "'");
+                labels.push({
+                    name: parts[0],
+                    line_num: -1
+                });
+                parsed.push({
+                    type: "label",
+                    name: parts[0]
+                });
+            }
+        }
+
+        for (let l in labels) {
+            for (let line in parsed) {
+                if ((parsed[line].type == "label") && (parsed[line].name == labels[l].name)) {
+                    labels[l].line_num = line;
+                }
             }
         }
 
         this.lines = parsed;
+        this.labels = labels;
         this.current_line = -1;
 
         console.dir(this.lines);
@@ -92,6 +119,30 @@ export class StoryParser {
                 type: "EOF"
             }
         }
-        return this.lines[this.current_line];
+
+        let line = this.lines[this.current_line];
+        let line_resolved = false;
+
+        {
+            line_resolved = true;
+            if (line.type == "jump") {
+                console.log("Jump command found: Jumping to " + line.label + "...");
+                this.current_line = this.resolveLabel(line.label);
+                line = this.lines[this.current_line];
+                //line_resolved = false;
+            }
+        } while(!line_resolved);
+
+        return line;
+    }
+    resolveLabel(name) {
+        for (let l in this.labels) {
+            let label = this.labels[l];
+            if (label.name == name) {
+                console.log("Label " + name + " resolved to line " + label.line_num);
+                return label.line_num;
+            }
+        }
+        return -1;
     }
 }

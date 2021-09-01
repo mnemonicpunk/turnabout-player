@@ -140,8 +140,12 @@ class Game {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         if (this.running) {
-            this.stage.drawUpper(this.upper_screen.getContext('2d'), this.images);
-            this.stage.drawLower(this.lower_screen.getContext('2d'), this.images);
+            try {
+                this.stage.drawUpper(this.upper_screen.getContext('2d'), this.images);
+                this.stage.drawLower(this.lower_screen.getContext('2d'), this.images);    
+            } catch(e) {
+                console.dir(e);
+            }
             
             this.ctx.drawImage(this.upper_screen, 0, 0, 256, 192, 0, 0, 256*this.render_scale, 192*this.render_scale);
             this.ctx.drawImage(this.lower_screen, 0, 0, 256, 192, 0, 193*this.render_scale, 256*this.render_scale, 192*this.render_scale);    
