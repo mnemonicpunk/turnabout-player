@@ -2,58 +2,74 @@ LOG Beginning execution of test script
 BGM trial
 BG judge
 ANIMATION judge_talk
-SAY Court is now in session for the case of...
-SAY ...
+SAY Alright gentlemen, the goal is to save the client as much money
+SAY as we possibly can.
 ANIMATION judge_confused
 SFX whoops
 FLASH
-SAY What was the case again?
+SAY I forgot what the client was again.
 BG prosecutor
 ANIMATION edgeworth_talk
-SAY So in summary...
+SAY I gotchu fam, the client is...
 SFX shooop
 ANIMATION edgeworth_paper
-SAY The defendant claims that it is really easy to make
-SAY your own Visual Novel games.
+SAY Contoso Inc., a wealthy mock company by Microsoft
+SAY they always use when they want to do examples.
 ANIMATION edgeworth_talk
-SAY Since that is obviously fraud we can close this case quickly.
-SAY Prosecution is ready your honor.
+SAY I have done preliminary analysis and come to the conclusion
+SAY that there is very little money to be saved here.
+BGM logic_and_trick
 BG defense
 ANIMATION phoenix_talk
-SAY The defense is ready as well.
-SAY Sadly casefiles are not yet implemented so I am kinda
-SAY flying in the dark.
+SAY Well that's what a newbie would say.
+SAY But when you look at the numbers in front of you
+SAY there is something you are clearly missing.
 BG prosecutor
 ANIMATION edgeworth_talk
-SAY Not exactly unusual for you.
+SAY Is that so?
+SAY Why don't you enlighten us?
 BG defense
 ANIMATION phoenix_sweat_talk
 SFX damage1
-SAY This time it is not my fault.
+SAY I got my papers messed up, just a second.
 ANIMATION phoenix_talk
-SAY Bet they will be here soon enough.
+SAY So if you look at the quarterly earnings reports and
+SAY compare it to the sheets that were handed out to stakeholders
+SAY a clear picture starts to form.
 >test
-BG judge
-ANIMATION judge_talk
-SAY Very well. Opening statements?
-BG defense
-ANIMATION phoenix_talk
-SAY Opening statements?
 BG prosecutor
 ANIMATION edgeworth_talk
-SAY Opening statements.
-BG defense
-SFX damage1
-ANIMATION phoenix_sweat_talk
-SAY Opening statements?!?
-BG prosecutor
+SAY Let's see...
 SFX shooop
 ANIMATION edgeworth_paper
-SAY Opening statements.
+SAY Everything looks fine to me. They are the same.
 BG defense
 ANIMATION phoenix_talk
-SAY We are just gonna keep doing this forever, aren't we?
+SAY That's why I get paid the big bucks.
+BGM objection
+SAY Using sheets 1 and 3 of the respective reports
+SAY there is clearly a doublebooked post around March
+SAY last year...
+BG speedline
+ANIMATION phoenix_closeup
+SAY But only on the internal sheet. The stakeholders
+SAY get the wrong version and think the company is
+SAY worth less than it actually is!
 BG prosecutor
-ANIMATION edgeworth_talk
-SAY It would appear so.
-JUMP >test
+SFX shattering
+ACT edgeworth_dmg
+ANIMATION edgeworth_dmg_talk
+SAY IMPOSSIBLE!
+SAY How could i have missed this?
+BG speedline
+ANIMATION phoenix_closeup
+SAY And since the earnings call is coming up very soon
+SAY this means we can save the client at least 30 percent
+SAY in legal fees over the next financial year!
+BG prosecutor
+SFX fwasshing
+SFX damage1
+ACT edgeworth_dmg
+ANIMATION edgeworth_dmg_talk
+SAY NOOOOOOOOOOOOOO!
+SAY DAMN YOU SPARROW!
